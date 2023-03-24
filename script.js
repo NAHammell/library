@@ -19,18 +19,19 @@ function createCard(book) {
     let title = document.createElement('p');
     let author = document.createElement('p');
     let pages = document.createElement('p');
-    let status = document.createElement('p');
+    let status = document.createElement('input');
+
+    status.setAttribute('type', 'checkbox');
 
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = `${book.pages} pages`;
-    status.textContent = book.status;
 
     card.classList.add('bookCard');
     title.classList.add('cardTitle');
     author.classList.add('cardAuthor');
     pages.classList.add('cardPages');
-    title.classList.add('cardStatus');
+    status.classList.add('cardStatus');
 
     card.appendChild(title);
     card.appendChild(author);

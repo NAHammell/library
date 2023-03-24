@@ -26,7 +26,7 @@ img {
 
 /* Import font */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 /* Styling */
 
@@ -78,4 +78,25 @@ body {
     padding: 20px;
     gap: 20px;
     border: 2px solid red;
+}
+
+.bookCard,
+.cardAuthor,
+.cardPages {
+    font-size: 1.5rem;
+}
+
+.cardStatus {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    width: 90%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: red;
+}
+
+.cardStatus:checked {
+    background-color: green;
 }
