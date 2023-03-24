@@ -41,5 +41,10 @@ function createCard(book) {
 }
 
 addBook('The Hobbit', 'J.R.R. Tolkien', '295', 'Read');
+addBook('Test', 'Tester', '200', 'Unread');
+addBook('The Hobbit', 'J.R.R. Tolkien', '295', 'Read');
 
 createCard(library[0]);
+createCard(library[1]);
+createCard(library[2]);
+createCard(library[2]);
