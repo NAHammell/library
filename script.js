@@ -33,12 +33,6 @@ function removeCard(element) {
     element.parentNode.remove();
 }
 
-function buildLibrary(arr) {
-    for(let i = 0; i < arr.length; i++) {
-        createCard(arr[i]);
-    }
-}
-
 function createCard(book) {
     let card = document.createElement('div');
     let title = document.createElement('p');
