@@ -74,15 +74,22 @@ body {
     gap: 20px;
 }
 
-#modal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#modal-bg {
     position: absolute;
+    display: none;
     width: 100vw;
     height: 100vh;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+#modal-container {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 #modal {
@@ -90,6 +97,7 @@ body {
     height: 360px;
     border-radius: 8px;
     background-color: rgb(235, 235, 235);
+    z-index: 2;
 }
 
 #modal form {
@@ -196,4 +204,8 @@ body {
 
 .text-input:focus {
     outline: none;
+}
+
+.hidden {
+    display: none;
 }
