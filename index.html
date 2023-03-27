@@ -25,12 +25,12 @@
         <div id="modal">
             <form>
                 <h1 id="form-title">Add a new book</h1>
-                <input type="text" placeholder="Title" class="text-input">
-                <input type="text" placeholder="Author" class="text-input">
-                <input type="number" placeholder="Pages" min="1" max="999" class="text-input">
-                <label for="read-status">
+                <input type="text" placeholder="Title" class="text-input" id="modal-title" required>
+                <input type="text" placeholder="Author" class="text-input" id="modal-author" required>
+                <input type="number" placeholder="Pages" min="1" max="999" class="text-input" id="modal-pages" required>
+                <label for="modal-status">
                     Have you read it?
-                    <input type="checkbox" name="readstatus" id="read-status">
+                    <input type="checkbox" name="modal-status" id="modal-status">
                 </label>
                 <button id="modal-button">Submit</button>
             </form>

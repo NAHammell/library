@@ -1,7 +1,13 @@
 const collection = document.getElementById('collection');
+const addBtn = document.getElementById('new-book');
+
 const modalBg = document.getElementById('modal-bg');
 const modal = document.getElementById('modal-container');
-const addBtn = document.getElementById('new-book');
+const modalTitle = document.getElementById('modal-title');
+const modalAuthor = document.getElementById('modal-author');
+const modalPages = document.getElementById('modal-pages');
+const modalStatus = document.getElementById('modal-status');
+const subBtn = document.getElementById('modal-button');
 
 let library = [];
 
@@ -46,6 +52,9 @@ function createCard(book) {
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = `${book.pages} pages`;
+    if (book.status === 'checked') {
+        status.setAttribute('checked', true);
+    }
     remove.textContent = 'Remove';
 
     card.classList.add('bookCard');
@@ -77,10 +86,24 @@ function showModal() {
     modal.style.display = 'flex';
 }
 
+function clearFields() {
+    modalTitle.value = '';
+    modalAuthor.value = '';
+    modalPages.value = '';
+    modalStatus.checked = false;
+}
+
 modalBg.addEventListener('click', hideModal);
+modalBg.addEventListener('click', clearFields);
 addBtn.addEventListener('click', showModal);
-
-addBook('The Hobbit', 'J.R.R. Tolkien', '295', 'Read');
-addBook('Test', 'Tester', '200', 'Unread');
-
-buildLibrary(library);
+subBtn.addEventListener('click', function (e) {
+    if (modalStatus.checked) {
+        addBook(modalTitle.value, modalAuthor.value, modalPages.value, 'checked');
+    } else {
+        addBook(modalTitle.value, modalAuthor.value, modalPages.value, 'unchecked')
+    }
+    createCard(library[library.length - 1]);
+    clearFields();
+    hideModal();
+    e.preventDefault();
+});
