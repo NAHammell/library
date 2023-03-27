@@ -20,23 +20,27 @@ function createCard(book) {
     let author = document.createElement('p');
     let pages = document.createElement('p');
     let status = document.createElement('input');
+    let remove = document.createElement('button');
 
     status.setAttribute('type', 'checkbox');
 
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = `${book.pages} pages`;
+    remove.textContent = 'Remove';
 
     card.classList.add('bookCard');
     title.classList.add('cardTitle');
     author.classList.add('cardAuthor');
     pages.classList.add('cardPages');
     status.classList.add('cardStatus');
+    remove.classList.add('removeBtn');
 
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(status);
+    card.appendChild(remove);
 
     collection.appendChild(card);
 }
